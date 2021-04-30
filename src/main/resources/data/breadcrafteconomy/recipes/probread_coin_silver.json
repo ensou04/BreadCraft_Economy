@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "breadcrafteconomy:probread_coin_gold"
+    }
+  ],
+  "result": {
+    "item": "breadcrafteconomy:probread_coin_silver",
+    "count": 4
+  }
+}

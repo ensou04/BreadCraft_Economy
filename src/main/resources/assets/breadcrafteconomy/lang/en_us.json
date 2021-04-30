@@ -1,0 +1,13 @@
+{
+  "itemGroup.breadcrafttab": "BreadCraft Economy",
+
+  "item.breadcrafteconomy.probread_coin_silver": "PBC Silver",
+  "item.breadcrafteconomy.probread_coin_gold": "PBC Gold",
+  "item.breadcrafteconomy.ender_wayfinder": "Ender Wayfinder",
+
+  "block.breadcrafteconomy.banker_station": "Banker Station",
+  "block.breadcrafteconomy.collector_station": "Collector Station",
+
+  "entity.minecraft.villager.breadcrafteconomy.banker": "Banker",
+  "entity.minecraft.villager.breadcrafteconomy.collector": "Collector"
+}
