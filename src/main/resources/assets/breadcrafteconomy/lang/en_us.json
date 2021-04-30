@@ -6,7 +6,7 @@
   "item.breadcrafteconomy.ender_wayfinder": "Ender Wayfinder",
 
   "block.breadcrafteconomy.banker_station": "Banker Station",
-  "block.breadcrafteconomy.collector_station": "Collector Station",
+  "block.breadcrafteconomy.collector_chest": "Collector's Chest",
 
   "entity.minecraft.villager.breadcrafteconomy.banker": "Banker",
   "entity.minecraft.villager.breadcrafteconomy.collector": "Collector"

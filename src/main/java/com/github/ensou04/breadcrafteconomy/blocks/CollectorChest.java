@@ -4,8 +4,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class CollectorStation extends Block {
-    public CollectorStation() {
-        super(AbstractBlock.Properties.of(Material.WOOD));
+public class CollectorChest extends Block {
+    public CollectorChest() {
+        super(AbstractBlock.Properties.of(Material.STONE));
     }
 }

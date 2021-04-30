@@ -22,5 +22,5 @@ public class ModItems {
     public static final RegistryObject<Item> BANKER_STATION = ITEMS.register("banker_station",
             () -> new BlockItem(ModBlocks.BANKER_STATION.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
     public static final RegistryObject<Item> COLLECTOR_STATION = ITEMS.register("collector_station",
-            () -> new BlockItem(ModBlocks.COLLECTOR_STATION.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
+            () -> new BlockItem(ModBlocks.COLLECTOR_CHEST.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
 }

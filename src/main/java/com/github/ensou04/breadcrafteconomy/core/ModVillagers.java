@@ -16,8 +16,8 @@ public class ModVillagers {
     public static final RegistryObject<PointOfInterestType> BANKER_STATION_POI = POINT_OF_INTEREST.register("banker_station",
             () -> new PointOfInterestType("banker_station", PointOfInterestType.getBlockStates(ModBlocks.BANKER_STATION.get()),1,1));
 
-    public static final RegistryObject<PointOfInterestType> COLLECTOR_STATION_POI = POINT_OF_INTEREST.register("collector_station",
-            () -> new PointOfInterestType("collector_station", PointOfInterestType.getBlockStates(ModBlocks.COLLECTOR_STATION.get()),1,1));
+    public static final RegistryObject<PointOfInterestType> COLLECTOR_STATION_POI = POINT_OF_INTEREST.register("collector_chest",
+            () -> new PointOfInterestType("collector_chest", PointOfInterestType.getBlockStates(ModBlocks.COLLECTOR_CHEST.get()),1,1));
 
     public static final RegistryObject<VillagerProfession> BANKER_PROF = PROFESSIONS.register("banker",
             () -> new VillagerProfession("banker", BANKER_STATION_POI.get(), ImmutableSet.of(),ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
