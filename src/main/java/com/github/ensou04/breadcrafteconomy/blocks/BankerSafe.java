@@ -4,8 +4,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BankerStation extends Block {
-    public BankerStation() {
+public class BankerSafe extends Block {
+    public BankerSafe() {
         super(AbstractBlock.Properties.of(Material.HEAVY_METAL));
     }
 }

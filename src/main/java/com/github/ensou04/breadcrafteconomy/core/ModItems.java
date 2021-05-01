@@ -19,8 +19,8 @@ public class ModItems {
     public static final RegistryObject<Item> ENDER_WAYFINDER = ITEMS.register("ender_wayfinder", EnderWayfinderItem::new);
 
     // Blocks Item
-    public static final RegistryObject<Item> BANKER_STATION = ITEMS.register("banker_station",
-            () -> new BlockItem(ModBlocks.BANKER_STATION.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
-    public static final RegistryObject<Item> COLLECTOR_STATION = ITEMS.register("collector_station",
+    public static final RegistryObject<Item> BANKER_SAFE = ITEMS.register("banker_safe",
+            () -> new BlockItem(ModBlocks.BANKER_SAFE.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
+    public static final RegistryObject<Item> COLLECTOR_CHEST = ITEMS.register("collector_chest",
             () -> new BlockItem(ModBlocks.COLLECTOR_CHEST.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
 }

@@ -8,7 +8,6 @@ import com.github.ensou04.breadcrafteconomy.world.CoinDropEvent;
 import com.github.ensou04.breadcrafteconomy.world.WorldData;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
@@ -38,6 +37,7 @@ public class BreadCraftEconomy
 
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+
         ModVillagers.PROFESSIONS.register(modEventBus);
         ModVillagers.POINT_OF_INTEREST.register(modEventBus);
 
