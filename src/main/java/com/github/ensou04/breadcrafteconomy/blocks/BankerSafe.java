@@ -16,6 +16,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraftforge.client.model.b3d.B3DModel;
 
 import javax.annotation.Nullable;
 
@@ -23,9 +24,13 @@ public class BankerSafe extends Block implements IWaterLoggable {
 
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    private static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 1.0D, 16.0D, 16.0D, 16.0D);
+    private static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 15.0D);
+    private static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 15.0D, 16.0D, 16.0D);
+    private static final VoxelShape WEST_AABB = Block.box(1.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     public BankerSafe() {
-        super(Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).noOcclusion());
+        super(Properties.copy(Blocks.IRON_BLOCK).noOcclusion());
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, Boolean.valueOf(false))
@@ -48,7 +53,17 @@ public class BankerSafe extends Block implements IWaterLoggable {
 
     @Override
     public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
-        return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+        switch (p_220053_1_.getValue(FACING)){
+            case NORTH:
+            default:
+                return NORTH_AABB;
+            case SOUTH:
+                return SOUTH_AABB;
+            case EAST:
+                return EAST_AABB;
+            case WEST:
+                return WEST_AABB;
+        }
     }
 
     @Override

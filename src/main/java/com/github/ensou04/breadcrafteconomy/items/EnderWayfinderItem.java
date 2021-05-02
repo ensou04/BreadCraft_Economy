@@ -5,6 +5,6 @@ import net.minecraft.item.Item;
 
 public class EnderWayfinderItem extends Item {
     public EnderWayfinderItem() {
-        super(new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP));
+        super(new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP).fireResistant());
     }
 }

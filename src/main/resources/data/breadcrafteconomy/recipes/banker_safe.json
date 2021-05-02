@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XZX",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "breadcrafteconomy:probread_coin_silver"
+    },
+    "Z": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "item": "breadcrafteconomy:banker_safe"
+  }
+}

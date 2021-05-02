@@ -25,7 +25,7 @@ public class CollectorChest extends Block implements IWaterLoggable {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public CollectorChest() {
-        super(Properties.copy(Blocks.ENDER_CHEST).sound(SoundType.STONE).noOcclusion());
+        super(Properties.copy(Blocks.ENDER_CHEST).noOcclusion());
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, Boolean.valueOf(false))

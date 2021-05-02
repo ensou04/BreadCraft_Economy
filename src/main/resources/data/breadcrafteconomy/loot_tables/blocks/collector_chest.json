@@ -28,7 +28,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "minecraft:obsidian",
+              "name": "breadcrafteconomy:ender_wayfinder",
               "functions": [
                 {
                   "function": "minecraft:set_count",
