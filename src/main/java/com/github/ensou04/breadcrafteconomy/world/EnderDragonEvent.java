@@ -22,7 +22,9 @@ import java.util.Random;
 public class EnderDragonEvent {
 
     public static Random random = new Random();
-    public static int randomNumber = MathHelper.nextInt(random,1,2);
+    public static int randomNumber(){
+        return MathHelper.nextInt(random,1,16);
+    }
     public static double randomPositionX(){
         return MathHelper.nextDouble(random,-32,32);
     }
@@ -44,13 +46,17 @@ public class EnderDragonEvent {
         for(int i = 0; i < 512; i++){
             if(i % 4 == 0){
                 if(new Random().nextFloat() > 0.5f){
-                    event.getDrops().add(new ItemEntity(world, randomPositionX(), entity.position().y+1, randomPositionY(), new ItemStack(ModItems.COIN_GOLD.get(),randomNumber)));
+                    event.getDrops().add(new ItemEntity(world, randomPositionX(), entity.position().y+1, randomPositionY(),
+                            new ItemStack(ModItems.COIN_GOLD.get(),randomNumber())));
                 } else {
-                    event.getDrops().add(new ItemEntity(world, randomPositionX(), entity.position().y+1, randomPositionY(), new ItemStack(ModItems.COIN_SILVER.get(),randomNumber)));
+                    event.getDrops().add(new ItemEntity(world, randomPositionX(), entity.position().y+1, randomPositionY(),
+                            new ItemStack(ModItems.COIN_SILVER.get(),randomNumber())));
                 }
             }
         }
+
         // Ender Wayfinder
-        event.getDrops().add(new ItemEntity(world, 0, entity.position().y+1, 0, new ItemStack(ModItems.ENDER_WAYFINDER.get(),1)));
+        event.getDrops().add(new ItemEntity(world, 0, entity.position().y+1, 0,
+                new ItemStack(ModItems.ENDER_WAYFINDER.get(),1)));
     }
 }
