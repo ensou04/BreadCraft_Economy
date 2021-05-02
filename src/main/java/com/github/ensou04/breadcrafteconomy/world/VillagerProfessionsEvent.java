@@ -26,6 +26,7 @@ public class VillagerProfessionsEvent {
     // Settings
     public static int CoinsPerDiamond = 4;
 
+
     @SubscribeEvent
     public static void registerTrades(net.minecraftforge.event.village.VillagerTradesEvent event) {
         Int2ObjectMap<List<ITrade>> trades = event.getTrades();

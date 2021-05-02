@@ -2,7 +2,9 @@ package com.github.ensou04.breadcrafteconomy.core;
 
 import com.github.ensou04.breadcrafteconomy.BreadCraftEconomy;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.Block;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
+import net.minecraft.item.Item;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraftforge.fml.RegistryObject;
@@ -19,10 +21,11 @@ public class ModVillagers {
     public static final RegistryObject<PointOfInterestType> COLLECTOR_STATION_POI = POINT_OF_INTEREST.register("collector_chest",
             () -> new PointOfInterestType("collector_chest", PointOfInterestType.getBlockStates(ModBlocks.COLLECTOR_CHEST.get()),1,1));
 
+    // Professions
     public static final RegistryObject<VillagerProfession> BANKER_PROF = PROFESSIONS.register("banker",
-            () -> new VillagerProfession("banker", BANKER_STATION_POI.get(), ImmutableSet.of(),ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
+            () -> new VillagerProfession("banker", BANKER_STATION_POI.get(), ImmutableSet.<Item>builder().build(), ImmutableSet.<Block>builder().build(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
     public static final RegistryObject<VillagerProfession> COLLECTOR_PROF = PROFESSIONS.register("collector",
-            () -> new VillagerProfession("collector", COLLECTOR_STATION_POI.get(), ImmutableSet.of(),ImmutableSet.of(), SoundEvents.ENDER_CHEST_CLOSE));
+            () -> new VillagerProfession("collector", COLLECTOR_STATION_POI.get(), ImmutableSet.<Item>builder().build(), ImmutableSet.<Block>builder().build(), SoundEvents.ENDER_CHEST_CLOSE));
 
 }
