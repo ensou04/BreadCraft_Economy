@@ -3,6 +3,7 @@ package com.github.ensou04.breadcrafteconomy;
 import com.github.ensou04.breadcrafteconomy.config.Config;
 import com.github.ensou04.breadcrafteconomy.core.ModBlocks;
 import com.github.ensou04.breadcrafteconomy.core.ModItems;
+import com.github.ensou04.breadcrafteconomy.core.ModTileEntities;
 import com.github.ensou04.breadcrafteconomy.core.ModVillagers;
 import com.github.ensou04.breadcrafteconomy.world.CoinDropEvent;
 import com.github.ensou04.breadcrafteconomy.world.WorldData;
@@ -37,6 +38,7 @@ public class BreadCraftEconomy
 
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModTileEntities.TILE_ENTITIES.register(modEventBus);
 
         ModVillagers.PROFESSIONS.register(modEventBus);
         ModVillagers.POINT_OF_INTEREST.register(modEventBus);

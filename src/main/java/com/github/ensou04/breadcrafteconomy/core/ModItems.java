@@ -2,7 +2,7 @@ package com.github.ensou04.breadcrafteconomy.core;
 
 import com.github.ensou04.breadcrafteconomy.BreadCraftEconomy;
 import com.github.ensou04.breadcrafteconomy.items.CoinGoldItem;
-import com.github.ensou04.breadcrafteconomy.items.CoinSilverItem;
+import com.github.ensou04.breadcrafteconomy.items.CoinItem;
 import com.github.ensou04.breadcrafteconomy.items.EnderWayfinderItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,8 +14,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BreadCraftEconomy.MODID);
 
     // Items
-    public static final RegistryObject<Item> COIN_SILVER = ITEMS.register("probread_coin_silver", CoinSilverItem::new);
-    public static final RegistryObject<Item> COIN_GOLD = ITEMS.register("probread_coin_gold", CoinGoldItem::new);
+    public static final RegistryObject<Item> COIN_SILVER = ITEMS.register("coin_silver", CoinItem::new);
+    public static final RegistryObject<Item> COIN_GOLD = ITEMS.register("coin_gold", CoinItem::new);
     public static final RegistryObject<Item> ENDER_WAYFINDER = ITEMS.register("ender_wayfinder", EnderWayfinderItem::new);
 
     // Blocks Item

@@ -1,26 +1,33 @@
 package com.github.ensou04.breadcrafteconomy.blocks;
 
+import com.github.ensou04.breadcrafteconomy.tileentities.BankerSafeTile;
 import net.minecraft.block.*;
+import net.minecraft.entity.monster.piglin.PiglinTasks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.stats.Stats;
+import net.minecraft.tileentity.BarrelTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
-import net.minecraftforge.client.model.b3d.B3DModel;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class BankerSafe extends Block implements IWaterLoggable {
+public class BankerSafe extends ContainerBlock implements IWaterLoggable {
 
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -35,6 +42,40 @@ public class BankerSafe extends Block implements IWaterLoggable {
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, Boolean.valueOf(false))
         );
+    }
+
+    @Nullable
+    @Override
+    public TileEntity newBlockEntity(IBlockReader p_196283_1_) {
+        return new BankerSafeTile();
+    }
+
+    @Override
+    public ActionResultType use(BlockState p_225533_1_, World p_225533_2_, BlockPos p_225533_3_, PlayerEntity p_225533_4_, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
+        if (p_225533_2_.isClientSide) {
+            return ActionResultType.SUCCESS;
+        } else {
+            TileEntity tileentity = p_225533_2_.getBlockEntity(p_225533_3_);
+            if (tileentity instanceof BankerSafeTile) {
+                p_225533_4_.openMenu((BankerSafeTile)tileentity);
+                p_225533_4_.awardStat(Stats.OPEN_ENDERCHEST);
+                PiglinTasks.angerNearbyPiglins(p_225533_4_, true);
+            }
+            return ActionResultType.CONSUME;
+        }
+    }
+
+    @Override
+    public void onRemove(BlockState p_196243_1_, World p_196243_2_, BlockPos p_196243_3_, BlockState p_196243_4_, boolean p_196243_5_) {
+        if (!p_196243_1_.is(p_196243_4_.getBlock())) {
+            TileEntity tileentity = p_196243_2_.getBlockEntity(p_196243_3_);
+            if (tileentity instanceof IInventory) {
+                InventoryHelper.dropContents(p_196243_2_, p_196243_3_, (IInventory)tileentity);
+                p_196243_2_.updateNeighbourForOutputSignal(p_196243_3_, this);
+            }
+
+            super.onRemove(p_196243_1_, p_196243_2_, p_196243_3_, p_196243_4_, p_196243_5_);
+        }
     }
 
     @Nullable
