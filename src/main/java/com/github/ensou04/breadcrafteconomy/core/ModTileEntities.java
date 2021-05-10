@@ -3,6 +3,7 @@ package com.github.ensou04.breadcrafteconomy.core;
 import com.github.ensou04.breadcrafteconomy.BreadCraftEconomy;
 import com.github.ensou04.breadcrafteconomy.tileentities.BankerSafeTile;
 import com.github.ensou04.breadcrafteconomy.tileentities.CollectorChestTile;
+import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

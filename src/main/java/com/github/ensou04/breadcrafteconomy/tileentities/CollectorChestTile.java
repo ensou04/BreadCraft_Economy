@@ -5,7 +5,6 @@ import net.minecraft.tileentity.TileEntity;
 
 public class CollectorChestTile extends TileEntity{
 
-
     public CollectorChestTile()
     {
         super(ModTileEntities.COLLECTOR_CHEST_TILE.get());

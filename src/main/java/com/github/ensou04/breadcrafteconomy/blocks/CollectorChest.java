@@ -100,6 +100,11 @@ public class CollectorChest extends AbstractChestBlock<CollectorChestTile> imple
         }
     }
 
+    @Override
+    public BlockRenderType getRenderShape(BlockState p_149645_1_) {
+        return BlockRenderType.ENTITYBLOCK_ANIMATED;
+    }
+
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
@@ -117,11 +122,6 @@ public class CollectorChest extends AbstractChestBlock<CollectorChestTile> imple
     @Override
     public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
         return Block.box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
-    }
-
-    @Override
-    public BlockRenderType getRenderShape(BlockState p_149645_1_) {
-        return BlockRenderType.MODEL;
     }
 
     @Override

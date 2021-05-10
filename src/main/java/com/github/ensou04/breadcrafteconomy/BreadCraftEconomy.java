@@ -7,6 +7,7 @@ import com.github.ensou04.breadcrafteconomy.core.ModTileEntities;
 import com.github.ensou04.breadcrafteconomy.core.ModVillagers;
 import com.github.ensou04.breadcrafteconomy.world.CoinDropEvent;
 import com.github.ensou04.breadcrafteconomy.world.WorldData;
+import net.minecraft.client.renderer.tileentity.ChestTileEntityRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.server.ServerWorld;
@@ -29,7 +30,6 @@ public class BreadCraftEconomy
 
     public static final ItemGroup BREADCRAFT_GROUP = new CustomGroup("breadcrafttab");
 
-
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
 
@@ -39,7 +39,6 @@ public class BreadCraftEconomy
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModTileEntities.TILE_ENTITIES.register(modEventBus);
-
         ModVillagers.PROFESSIONS.register(modEventBus);
         ModVillagers.POINT_OF_INTEREST.register(modEventBus);
 

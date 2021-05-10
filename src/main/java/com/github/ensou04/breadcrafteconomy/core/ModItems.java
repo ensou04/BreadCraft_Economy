@@ -23,4 +23,5 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.BANKER_SAFE.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
     public static final RegistryObject<Item> COLLECTOR_CHEST = ITEMS.register("collector_chest",
             () -> new BlockItem(ModBlocks.COLLECTOR_CHEST.get(), new Item.Properties().tab(BreadCraftEconomy.BREADCRAFT_GROUP)));
+
 }

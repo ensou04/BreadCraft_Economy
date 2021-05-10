@@ -14,4 +14,5 @@ public class ModBlocks {
     // Blocks Register
     public static final RegistryObject<Block> BANKER_SAFE = BLOCKS.register("banker_safe", BankerSafe::new);
     public static final RegistryObject<Block> COLLECTOR_CHEST = BLOCKS.register("collector_chest", CollectorChest::new);
+
 }
